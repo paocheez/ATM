@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./assets/loco.png">
+    <link rel="stylesheet" href="style.css">
+    <title>ATM</title>
+</head>
+<body>
+    <header>
+        <h1 id="title-header">citibank<img id="logo-image-w" src="./assets/loco.png" alt="" srcset=""></h1>
+    </header>
+    <section class="container" id="container-access">
+        <div class="welcome-title">
+            <h1>citibank<img id="img-first" src="./assets/loco.png" alt="" srcset=""></h1>
+        </div>
+        <div class="welcome-data">
+            <span>Hola de nuevo!</span>
+            <input placeholder="Ingresa tu usuario" type="text" id="user">
+            <input placeholder="Ingresa tu contrasena" type="password" id="password">
+            <button id="btn-access" onClick="Access();">Aceptar</button>
+            <span id="error-mssg" style="display:none;">Acceso denegado.<br>Intentalo de nuevo.</span>
+        </div>
+        <div class="welcome-footer">
+            <span>citibank© 2022</span>
+        </div>
+    </section>
+    <section class="container" id="container-stats" style="display:none;">
+            <section class="balance">
+                <p class="title-setts">Mi cuenta</p>
+                <p id="title-balance">Estadisticas</p>
+            </section>
+            <section class="stats-resume">
+                <div class="stats-item">
+                    <img src="./assets/deposit.png" alt="">
+                    <div class="stats-group">
+                        <span class="stats-name">Entrada de<br>Depositos</span>
+                        <span class="stats-amount">$8580</span>
+                    </div>
+                </div>
+                <div class="stats-item">
+                    <img src="./assets/daily.png" alt="">
+                    <div class="stats-group">
+                        <span class="stats-name">Deposito<br>Diario</span>
+                        <span class="stats-amount">$300</span>
+                    </div>
+                </div>
+                <div class="stats-item">
+                    <img src="./assets/month.png" alt="">
+                    <div class="stats-group">
+                        <span class="stats-name">Deposito<br>Mensual</span>
+                        <span class="stats-amount">$13789</span> 
+                    </div>
+                </div>
+            </section>
+            <img class="graph" src="./assets/stats.PNG" alt="">
+            <section class="stats-category">
+                <h3>Category Expenses</h3>
+                <img src="./assets/graphs.PNG" alt="">
+            </section>
+    </section>
+    <section class="container" id="container-perfil" style="display:none;">
+        <section class="balance">
+            <p class="title-setts">Mi cuenta</p>
+            <p id="title-balance">Perfil</p>
+        </section>
+        <section class="perfil-data">
+            <img class="perfil-photo" src="./assets/perfil.png" alt="">
+            <span class="perfil-title">Cuenta perfiles</span>            
+            <div class="perfil-group">
+                <span class="perfil-item-name">Identificacion personal</span>
+                <div class="perfil-item">
+                    <span class="perfil-item-title">Nombre completo</span>
+                    <span class="perfil-item-data" id="namecmpt-client"></span>
+                </div>
+                <div class="perfil-item">
+                    <span class="perfil-item-title">No de cliente</span>
+                    <span  class="perfil-item-data">105524784</span>
+                </div>
+            </div>
+            <div class="perfil-group">
+                <span class="perfil-item-name">Datos de contacto</span>
+                <div class="perfil-item">
+                    <span class="perfil-item-title">Celular verificado</span>
+                    <span class="perfil-item-data">** **** 5663</span>
+                </div>
+                <div class="perfil-item">
+                    <span class="perfil-item-title">Casa</span>
+                    <span  class="perfil-item-data">No aplica</span>
+                </div>
+                <div class="perfil-item">
+                    <span class="perfil-item-title">Correo electronico</span>
+                    <span  class="perfil-item-data">*******az@gmail.com</span>
+                </div>
+            </div>
+            <div class="perfil-group">
+                <span class="perfil-item-name">Datos personales</span>
+                <div class="perfil-item">
+                    <span class="perfil-item-title">Fecha de nacimiento</span>
+                    <span class="perfil-item-data">**/**/1994</span>
+                </div>
+                <div class="perfil-item">
+                    <span class="perfil-item-title">RFC</span>
+                    <span  class="perfil-item-data">**********</span>
+                </div>
+            </div>
+        </section>
+    </section>
+    <section class="container" id="container-home" style="display:none;">
+        <section id="title-contain">
+            <h2>¡Hola, <span id="name-client"></span>!</h2>
+            <span>20-04-2022</span>    
+        </section>
+        <section id="card-contain">
+            <span class="under">citibank </span>
+            <div class="card">
+                <p id="card-company">VISA</p>
+                <img src="" alt="">
+                <p id="card-number">**** **** **** 0005</p>
+                <div id="card-data">
+                    <div id="card-data-n">
+                        <p class="card-data-names-style">CARDHOLDER</p>
+                        <p class="card-data-style">jjkajakl </p>
+                    </div>
+                    <div id="card-data-d">  
+                        <p class="card-data-names-style"> EXP</p>
+                        <p class="card-data-style">11/24</p>
+                    </div>
+                    <div id="card-data-c">  
+                        <p class="card-data-names-style">CVV</p>
+                        <p class="card-data-style">826</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="operations-contain" >
+                <button class="operations-card" onClick="Consulta();">
+                    <img class="operations-img" src="./assets/consulta.png" alt="">
+                    <span class="operations-item-name">Consulta</span>
+                </button>
+                <button class="operations-card" onClick="Abona();">
+                    <img class="operations-img" src="./assets/abona.png" alt="">
+                    <span class="operations-item-name">Abona</span>
+                </button>
+                <button class="operations-card" onClick="Retira();">
+                    <img class="operations-img" src="./assets/retira.png" alt="">
+                    <span class="operations-item-name">Retira</span>
+                </button>
+        </section>
+    </section>
+    <section class="container" id="container-pay" style="display:none;">
+        <section class="balance">
+            <p id="total-balance">$<span id="amount-client"></span> </p>
+            <p id="title-balance">Available balance</p>
+        </section>
+        <section id="container-amount">
+            <span id="span-amount">Ingresa la cantidad: </span> <br>
+            <span class="sign">$</span>
+            <input type="number" name="amount" id="amount">
+            <button id="accept-amount" onclick="AcceptAction();">Aceptar</button>
+            <p id="amount-info"></p>   
+        </section>
+        <section id="container-extras">
+            <span class="balance-day">Other Settings</span>
+            <div class="balance-item2">
+                <img class="balance-icon" src="./assets/contact.png" alt="">
+                <span class="balance-place-type">Contactless Payment</span>
+                <img class="balance-icon" src="./assets/on.png" alt="">
+            </div>
+            <div class="balance-item2">
+                <img class="balance-icon" src="./assets/online.png" alt="">
+                <span class="balance-place-type">Online Payment</span>
+                <img class="balance-icon" src="./assets/off.png" alt="">
+            </div>
+            <div class="balance-item2">
+                <img class="balance-icon" src="./assets/efect.png" alt="">
+                <span class="balance-place-type">ATM Withdraws</span>
+                <img class="balance-icon" src="./assets/on.png" alt="">
+            </div>
+            <div class="balance-item2">
+                <img class="balance-icon" src="./assets/limit.png" alt="">
+                <span class="balance-place-type">Card Limit</span>
+                <img class="balance-icon" src="./assets/on.png" alt="">
+            </div>
+            <div class="balance-item2">
+                <img class="balance-icon" src="./assets/freeze.png" alt="">
+                <span class="balance-place-type">Freeze Card</span>
+                <img class="balance-icon" src="./assets/off.png" alt="">
+            </div>
+        </section>
+    </section>
+
+    <section class="container" id="container-operations" style="display:none;">
+        <section class="balance">
+            <p id="total-balance">$<span id="amount-client-s"></span> </p>
+            <p id="title-balance">Available balance</p>
+        </section>
+        <section class="balance-operations">
+            <span class="balance-day">Today</span>
+            <div class="balance-operations-container">
+                <div class="balance-item">
+                    <img class="balance-icon" src="./assets/grocery.png" alt="">
+                    <div class="balance-place">
+                        <span class="balance-place-type">Grocery</span>
+                        <span class="balance-place-name">Walmart</span>
+                    </div>
+                    <div class="balance-income">
+                        <span class="balance-income-amount">-$1,350.20</span>
+                        <span class="balance-income-date">19 Feb</span>
+                    </div>
+                </div>
+                <div class="balance-item">
+                    <img class="balance-icon" src="./assets/transport.png" alt="">
+                    <div class="balance-place">
+                        <span class="balance-place-type">Transport</span>
+                        <span class="balance-place-name">Uber</span>
+                    </div>
+                    <div class="balance-income">
+                        <span class="balance-income-amount">-$150.00</span>
+                        <span class="balance-income-date">19 Feb</span>
+                    </div>
+                </div>
+            </div>
+            <span class="balance-day">Yesterday</span>
+            <div class="balance-operations-container">
+                <div class="balance-item">
+                    <img class="balance-icon" src="./assets/coffee.png" alt="">
+                    <div class="balance-place">
+                        <span class="balance-place-type">Food</span>
+                        <span class="balance-place-name">Starbucks</span>
+                    </div>
+                    <div class="balance-income">
+                        <span class="balance-income-amount">-$1,350.20</span>
+                        <span class="balance-income-date">18 Feb</span>
+                    </div>
+                </div>
+            <span class="balance-day">Last week</span>
+            <div class="balance-operations-container">
+                <div class="balance-item">
+                    <img class="balance-icon" src="./assets/grocery.png" alt="">
+                    <div class="balance-place">
+                        <span class="balance-place-type">Grocery</span>
+                        <span class="balance-place-name">Walmart</span>
+                    </div>
+                    <div class="balance-income">
+                        <span class="balance-income-amount">-$890.65</span>
+                        <span class="balance-income-date">16 Feb</span>
+                    </div>
+                </div>
+                <div class="balance-item">
+                    <img class="balance-icon" src="./assets/delivery.png" alt="">
+                    <div class="balance-place">
+                        <span class="balance-place-type">Delivery</span>
+                        <span class="balance-place-name">Amazon</span>
+                    </div>
+                    <div class="balance-income">
+                        <span class="balance-income-amount">-$350.00</span>
+                        <span class="balance-income-date">14 Feb</span>
+                    </div>
+                </div>
+                <div class="balance-item">
+                    <img class="balance-icon" src="./assets/meat.png" alt="">
+                    <div class="balance-place">
+                        <span class="balance-place-type">Food</span>
+                        <span class="balance-place-name">Don Asado</span>
+                    </div>
+                    <div class="balance-income">
+                        <span class="balance-income-amount">-$1,130.00</span>
+                        <span class="balance-income-date">13 Feb</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+    <section id="menu-contain" style="display:none;">
+            <button class="menu-item" id="btn-inicio" onClick="Home();">
+                <img class="menu-img" src="./assets/home.png" alt="">
+                <span class="menu-item-name">Inicio</span>
+            </button>
+            <button class="menu-item" id="btn-statics" onClick="Today();">
+                <img class="menu-img" src="./assets/today.png" alt="">
+                <span class="menu-item-name">Statics</span>
+            </button>
+            <button class="menu-item" id="btn-perfil" onClick="Perfil();">
+                <img class="menu-img" src="./assets/perfil.png" alt="">
+                <span class="menu-item-name">Perfil</span>
+            </button>
+    </section>
+    <source>
+</body>
+<script src="myscript.js"></script>
+</html>
