@@ -1,6 +1,6 @@
 var cuentas = [
-  {nombre:"Jin",apellido:"Kim",password:"password0",saldo:8700},
-  {nombre:"Henry",apellido:"Cavill",password:"1234",saldo:1900},
+  {nombre:"Jin",apellido:"Kim",password:"moon20",saldo:8700},
+  {nombre:"Henry",apellido:"Cavill",password:"superman12",saldo:1900},
   {nombre:"Tea",apellido:"Richards",password:"hola00",saldo:14050}
 ];
 
@@ -45,57 +45,110 @@ function Access(){
 }
 
 function Home(){
-  const btnop = document.getElementById("container-home");
-    if (btnop.style.display === "none") {
-      btnop.style.display = "block";
-    } else {
-      btnop.style.display = "none";
-    }
+  const bthome = document.getElementById("container-home");
+  const bttoday = document.getElementById("container-stats");
+  const btperfil = document.getElementById("container-perfil");
+  const btnoperation = document.getElementById("container-operations");
+  const btpay = document.getElementById("container-pay");
+  const btremove = document.getElementById("container-remove");
+
+    if (bthome.style.display === "none") {
+      bthome.style.display = "block";
+      bttoday.style.display = "none";
+      btperfil.style.display = "none";
+      btnoperation.style.display = "none";
+      btpay.style.display = "none";
+      btremove.style.display = "none";
+    } 
 }
 
 function Today(){
-  const btnop = document.getElementById("container-stats");
-    if (btnop.style.display === "none") {
-        btnop.style.display = "block";
-      } else {
-        btnop.style.display = "none";
-      }
+  const bthome = document.getElementById("container-home");
+  const bttoday = document.getElementById("container-stats");
+  const btperfil = document.getElementById("container-perfil");
+  const btnoperation = document.getElementById("container-operations");
+  const btpay = document.getElementById("container-pay");
+  const btremove = document.getElementById("container-remove");
+
+    if (bttoday.style.display === "none") {
+      bthome.style.display = "none";
+      bttoday.style.display = "block";
+      btperfil.style.display = "none";
+      btnoperation.style.display = "none";
+      btpay.style.display = "none";
+      btremove.style.display = "none";
+    } 
 }
 
 function Perfil(){
-  const btnop = document.getElementById("container-perfil");
-    if (btnop.style.display === "none") {
-        btnop.style.display = "block";
-      } else {
-        btnop.style.display = "none";
-      }
+  const bthome = document.getElementById("container-home");
+  const bttoday = document.getElementById("container-stats");
+  const btperfil = document.getElementById("container-perfil");
+  const btnoperation = document.getElementById("container-operations");
+  const btpay = document.getElementById("container-pay");
+  const btremove = document.getElementById("container-remove");
+
+    if (btperfil.style.display === "none") {
+      bthome.style.display = "none";
+      bttoday.style.display = "none";
+      btperfil.style.display = "block";
+      btnoperation.style.display = "none";
+      btpay.style.display = "none";
+      btremove.style.display = "none";
+    } 
 }
 
 function Consulta(){
-    const btnop = document.getElementById("container-operations");
-    if (btnop.style.display === "none") {
-        btnop.style.display = "block";
-      } else {
-        btnop.style.display = "none";
-      }
+  const bthome = document.getElementById("container-home");
+  const bttoday = document.getElementById("container-stats");
+  const btperfil = document.getElementById("container-perfil");
+  const btnoperation = document.getElementById("container-operations");
+  const btpay = document.getElementById("container-pay");
+  const btremove = document.getElementById("container-remove");
+
+    if (btnoperation.style.display === "none") {
+      bthome.style.display = "none";
+      bttoday.style.display = "none";
+      btperfil.style.display = "none";
+      btnoperation.style.display = "block";
+      btpay.style.display = "none";
+      btremove.style.display = "none";
+    } 
 }
 
 function Abona(){
-    const btnop = document.getElementById("container-pay");
-    if (btnop.style.display === "none") {
-        btnop.style.display = "block";
-      } else {
-        btnop.style.display = "none";
-      }
+  const bthome = document.getElementById("container-home");
+  const bttoday = document.getElementById("container-stats");
+  const btperfil = document.getElementById("container-perfil");
+  const btnoperation = document.getElementById("container-operations");
+  const btpay = document.getElementById("container-pay");
+  const btremove = document.getElementById("container-remove");
+
+    if (btpay.style.display === "none") {
+      bthome.style.display = "none";
+      bttoday.style.display = "none";
+      btperfil.style.display = "none";
+      btnoperation.style.display = "none";
+      btpay.style.display = "block";
+      btremove.style.display = "none";
+    } 
 }
 
-
 function Retira(){
-  const btnop = document.getElementById("container-remove");
-  if (btnop.style.display === "none") {
-      btnop.style.display = "block";
-    } else {
-      btnop.style.display = "none";
+  const bthome = document.getElementById("container-home");
+  const bttoday = document.getElementById("container-stats");
+  const btperfil = document.getElementById("container-perfil");
+  const btnoperation = document.getElementById("container-operations");
+  const btpay = document.getElementById("container-pay");
+  const btremove = document.getElementById("container-remove");
+
+    if (btremove.style.display === "none") {
+      bthome.style.display = "none";
+      bttoday.style.display = "none";
+      btperfil.style.display = "none";
+      btnoperation.style.display = "none";
+      btpay.style.display = "none";
+      btremove.style.display = "block";
     }
 }
 
