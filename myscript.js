@@ -4,7 +4,7 @@ var cuentas = [
   {nombre:"Tea",apellido:"Richards",password:"hola00",saldo:14050}
 ];
 
-let positionOutside = [];
+var positionOutside = [];
 
 function Access(){
   let userValue = document.getElementById("user").value;
@@ -29,15 +29,19 @@ function Access(){
       let nombrecomp = position.nombre+" "+position.apellido;
       let amounts = position.saldo;
       document.getElementById("namecmpt-client").innerHTML = nombrecomp;
+      document.getElementById("namecmpt-client-card").innerHTML = nombrecomp;
       document.getElementById("amount-client").innerHTML = amounts;
       document.getElementById("amount-client-s").innerHTML = amounts;
+      document.getElementById("amount-client-remove").innerHTML = amounts;
       console.log("aquí dentro del if"+position.nombre);
+      console.log("nombre completo"+nombrecomp);
       Home();
+      positionOutside=position;
   }else{
     console.log("denegado");
     btntr.style.display = "block";
   }
-  return positionOutside=position;
+  return positionOutside;
 }
 
 function Home(){
@@ -83,4 +87,55 @@ function Abona(){
       } else {
         btnop.style.display = "none";
       }
+}
+
+
+function Retira(){
+  const btnop = document.getElementById("container-remove");
+  if (btnop.style.display === "none") {
+      btnop.style.display = "block";
+    } else {
+      btnop.style.display = "none";
+    }
+}
+
+function AbonaAction(){
+  let amountAbonaValue = document.getElementById("abona-amount").value;
+  let amountTotalAbonaValue = positionOutside.saldo;
+  amountAbonaValue = parseInt(amountAbonaValue);
+  let totalAb;
+  
+  if(amountAbonaValue>=10000){
+    document. getElementById("abona-amount"). value = "";
+    document.getElementById("amount-info").innerHTML = "Lo sentimos, no puedes ingresar mas de <br> $10,000.00";
+  }else{
+    totalAb = amountTotalAbonaValue + amountAbonaValue;
+    positionOutside.saldo = totalAb;
+    document.getElementById("amount-client").innerHTML = totalAb;
+    document.getElementById("amount-client-s").innerHTML = totalAb;
+    document.getElementById("amount-client-remove").innerHTML = totalAb;
+    document. getElementById("abona-amount"). value = "";
+    document.getElementById("amount-info").innerHTML = "Recarga exitosa";
+  }
+}
+
+
+function RetiraAction(){
+  let amountRetiraValue = document.getElementById("retira-amount").value;
+  let amountTotalRetiraValue = positionOutside.saldo;
+  amountRetiraValue = parseInt(amountRetiraValue);
+  let totalRe;
+  
+  if(amountRetiraValue>amountTotalRetiraValue||amountRetiraValue<0){
+    document. getElementById("retira-amount"). value = "";
+    document.getElementById("amount-info-r").innerHTML = "Monto insuficiente para retirar";
+  }else{
+    totalRe = amountTotalRetiraValue - amountRetiraValue;
+    positionOutside.saldo = totalRe;
+    document.getElementById("amount-client").innerHTML = totalRe;
+    document.getElementById("amount-client-s").innerHTML = totalRe;
+    document.getElementById("amount-client-remove").innerHTML = totalRe;
+    document. getElementById("retira-amount"). value = "";
+    document.getElementById("amount-info-r").innerHTML = "Retiro exitoso";
+  }
 }

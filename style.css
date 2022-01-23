@@ -439,7 +439,7 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );*/
     margin-top: -40px;
 }
 
-#amount-client, #amount-client-s{
+#amount-client, #amount-client-s, #amount-client-remove{
     font-size: 50px;
     position: absolute;
     font-weight: bolder;
@@ -480,6 +480,11 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );*/
     border: 1px solid rgba( 255, 255, 255, 0.18 );
     padding: 5px 15px;
     margin-top: 1px;
+}
+
+.balance-item:hover{
+    background-color:rgb(37, 35, 35);
+    color: whitesmoke;
 }
 
 .balance-place, .balance-income{
@@ -523,7 +528,7 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );*/
 }
 
 
-#accept-amount {
+#accept-amount, #accept-amount-r {
    background-color: rgb(37, 35, 35);
    color: whitesmoke;
    border-radius: 10px;
@@ -531,15 +536,51 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );*/
    font-size: 28px;
  }
 
- #accept-amount:hover {
+ #accept-amount:hover, #accept-amount-r:hover {
    background-color: #5812CC;
    text-decoration: none;
    cursor: pointer;
  }
 
- #container-extras{
-     margin-top: 75px;
+ #abona-amount{
+    padding-left: 15px;
+    height: 30px;
  }
+
+ #amount-info, #amount-info-r{
+     position: absolute;
+     line-height: 20px;
+ }
+ #container-extras{
+     margin-top: 55px;
+ }
+
+ 
+.operations-card-selected{
+    background-color: #5812CC;
+    border-radius: 5px;
+    height: 50px;
+    margin-top: 5px;
+    display: flex;
+    padding-left: 15px;
+    justify-content: left;
+    text-align: center;
+    align-items: center;
+}
+
+.operations-img-selected{
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+}
+
+
+.operations-item-name-selected{
+    color: whitesmoke;
+    font-size: 40px;
+    padding-left: 15px;
+}
+
  .balance-item2{
     display: flex;
     flex-direction: row;

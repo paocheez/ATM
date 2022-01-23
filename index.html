@@ -125,7 +125,7 @@
                 <div id="card-data">
                     <div id="card-data-n">
                         <p class="card-data-names-style">CARDHOLDER</p>
-                        <p class="card-data-style">jjkajakl </p>
+                        <p class="card-data-style"> <span id="namecmpt-client-card"></span></p>
                     </div>
                     <div id="card-data-d">  
                         <p class="card-data-names-style"> EXP</p>
@@ -158,11 +158,15 @@
             <p id="total-balance">$<span id="amount-client"></span> </p>
             <p id="title-balance">Available balance</p>
         </section>
-        <section id="container-amount">
-            <span id="span-amount">Ingresa la cantidad: </span> <br>
+        <div class="operations-card-selected">
+            <img class="operations-img-selected" src="./assets/abona.png" alt="">
+            <span class="operations-item-name-selected">Abona</span>
+        </div>
+        <section class="container-amount">
+            <!--<span id="span-amount">Ingresa la cantidad: </span> <br>-->
             <span class="sign">$</span>
-            <input type="number" name="amount" id="amount">
-            <button id="accept-amount" onclick="AcceptAction();">Aceptar</button>
+            <input type="number" name="amount" id="abona-amount">
+            <button id="accept-amount" onclick="AbonaAction();">Aceptar</button>
             <p id="amount-info"></p>   
         </section>
         <section id="container-extras">
@@ -194,7 +198,51 @@
             </div>
         </section>
     </section>
-
+    <section class="container" id="container-remove" style="display:none;">
+        <section class="balance">
+            <p id="total-balance">$<span id="amount-client-remove"></span> </p>
+            <p id="title-balance">Available balance</p>
+        </section>
+        <div class="operations-card-selected">
+            <img class="operations-img-selected" src="./assets/retira.png" alt="">
+            <span class="operations-item-name-selected">Retira</span>
+        </div>
+        <section class="container-amount">
+            <!--<span id="span-amount">Ingresa la cantidad: </span> <br>-->
+            <span class="sign">$</span>
+            <input type="number" name="amount" id="retira-amount">
+            <button id="accept-amount-r" onclick="RetiraAction();">Aceptar</button>
+            <p id="amount-info-r"></p>   
+        </section>
+        <section id="container-extras">
+            <span class="balance-day">Other Settings</span>
+            <div class="balance-item2">
+                <img class="balance-icon" src="./assets/contact.png" alt="">
+                <span class="balance-place-type">Contactless Payment</span>
+                <img class="balance-icon" src="./assets/on.png" alt="">
+            </div>
+            <div class="balance-item2">
+                <img class="balance-icon" src="./assets/online.png" alt="">
+                <span class="balance-place-type">Online Payment</span>
+                <img class="balance-icon" src="./assets/off.png" alt="">
+            </div>
+            <div class="balance-item2">
+                <img class="balance-icon" src="./assets/efect.png" alt="">
+                <span class="balance-place-type">ATM Withdraws</span>
+                <img class="balance-icon" src="./assets/on.png" alt="">
+            </div>
+            <div class="balance-item2">
+                <img class="balance-icon" src="./assets/limit.png" alt="">
+                <span class="balance-place-type">Card Limit</span>
+                <img class="balance-icon" src="./assets/on.png" alt="">
+            </div>
+            <div class="balance-item2">
+                <img class="balance-icon" src="./assets/freeze.png" alt="">
+                <span class="balance-place-type">Freeze Card</span>
+                <img class="balance-icon" src="./assets/off.png" alt="">
+            </div>
+        </section>
+    </section>
     <section class="container" id="container-operations" style="display:none;">
         <section class="balance">
             <p id="total-balance">$<span id="amount-client-s"></span> </p>
