@@ -33,8 +33,6 @@ function Access(){
       document.getElementById("amount-client").innerHTML = amounts;
       document.getElementById("amount-client-s").innerHTML = amounts;
       document.getElementById("amount-client-remove").innerHTML = amounts;
-      console.log("aquí dentro del if"+position.nombre);
-      console.log("nombre completo"+nombrecomp);
       Home();
       positionOutside=position;
   }else{
@@ -45,6 +43,8 @@ function Access(){
 }
 
 function Home(){
+  
+  const pin = document.getElementById("acc-pin");
   const bthome = document.getElementById("container-home");
   const bttoday = document.getElementById("container-stats");
   const btperfil = document.getElementById("container-perfil");
@@ -53,6 +53,7 @@ function Home(){
   const btremove = document.getElementById("container-remove");
 
     if (bthome.style.display === "none") {
+      pin.style.display = "none";
       bthome.style.display = "block";
       bttoday.style.display = "none";
       btperfil.style.display = "none";
