@@ -45,6 +45,10 @@ function Access(){
 }
 
 function Home(){
+<<<<<<< HEAD
+=======
+  
+>>>>>>> 7b67bd5757e9f594c5d5b9be18fdbb850b59d5ce
   const pin = document.getElementById("acc-pin");
   const bthome = document.getElementById("container-home");
   const btperfil = document.getElementById("container-perfil");
@@ -176,6 +180,7 @@ function RetiraAction(){
     document.getElementById("amount-info-r").innerHTML = "Retiro exitoso";
   }
 }
+<<<<<<< HEAD
 
 function DisablePay(){
   if (document.getElementById("abona-amount").disabled){
@@ -203,3 +208,5 @@ function DisableRemove(){
     document.getElementById("amount-info-r").style.visibility = "hidden";
   }
 }
+=======
+>>>>>>> 7b67bd5757e9f594c5d5b9be18fdbb850b59d5ce
