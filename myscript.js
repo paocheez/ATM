@@ -16,7 +16,6 @@ function Access(){
   for(let i=0;i<cuentas.length;i++){
       if((userValue == cuentas[i].nombre)&&(passwordValue == cuentas[i].password)){
           var position = cuentas[i];
-          console.log(position);
       }else{
           false;
       }
@@ -33,10 +32,11 @@ function Access(){
       document.getElementById("amount-client").innerHTML = amounts;
       document.getElementById("amount-client-s").innerHTML = amounts;
       document.getElementById("amount-client-remove").innerHTML = amounts;
-      console.log("aquí dentro del if"+position.nombre);
-      console.log("nombre completo"+nombrecomp);
       Home();
       positionOutside=position;
+      var today = new Date();
+      var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+      document.getElementById("current-date").innerHTML = date;
   }else{
     console.log("denegado");
     btntr.style.display = "block";
@@ -45,34 +45,16 @@ function Access(){
 }
 
 function Home(){
+  const pin = document.getElementById("acc-pin");
   const bthome = document.getElementById("container-home");
-  const bttoday = document.getElementById("container-stats");
   const btperfil = document.getElementById("container-perfil");
   const btnoperation = document.getElementById("container-operations");
   const btpay = document.getElementById("container-pay");
   const btremove = document.getElementById("container-remove");
 
     if (bthome.style.display === "none") {
+      pin.style.display = "none";
       bthome.style.display = "block";
-      bttoday.style.display = "none";
-      btperfil.style.display = "none";
-      btnoperation.style.display = "none";
-      btpay.style.display = "none";
-      btremove.style.display = "none";
-    } 
-}
-
-function Today(){
-  const bthome = document.getElementById("container-home");
-  const bttoday = document.getElementById("container-stats");
-  const btperfil = document.getElementById("container-perfil");
-  const btnoperation = document.getElementById("container-operations");
-  const btpay = document.getElementById("container-pay");
-  const btremove = document.getElementById("container-remove");
-
-    if (bttoday.style.display === "none") {
-      bthome.style.display = "none";
-      bttoday.style.display = "block";
       btperfil.style.display = "none";
       btnoperation.style.display = "none";
       btpay.style.display = "none";
@@ -82,7 +64,6 @@ function Today(){
 
 function Perfil(){
   const bthome = document.getElementById("container-home");
-  const bttoday = document.getElementById("container-stats");
   const btperfil = document.getElementById("container-perfil");
   const btnoperation = document.getElementById("container-operations");
   const btpay = document.getElementById("container-pay");
@@ -90,7 +71,6 @@ function Perfil(){
 
     if (btperfil.style.display === "none") {
       bthome.style.display = "none";
-      bttoday.style.display = "none";
       btperfil.style.display = "block";
       btnoperation.style.display = "none";
       btpay.style.display = "none";
@@ -100,7 +80,6 @@ function Perfil(){
 
 function Consulta(){
   const bthome = document.getElementById("container-home");
-  const bttoday = document.getElementById("container-stats");
   const btperfil = document.getElementById("container-perfil");
   const btnoperation = document.getElementById("container-operations");
   const btpay = document.getElementById("container-pay");
@@ -108,7 +87,6 @@ function Consulta(){
 
     if (btnoperation.style.display === "none") {
       bthome.style.display = "none";
-      bttoday.style.display = "none";
       btperfil.style.display = "none";
       btnoperation.style.display = "block";
       btpay.style.display = "none";
@@ -118,7 +96,6 @@ function Consulta(){
 
 function Abona(){
   const bthome = document.getElementById("container-home");
-  const bttoday = document.getElementById("container-stats");
   const btperfil = document.getElementById("container-perfil");
   const btnoperation = document.getElementById("container-operations");
   const btpay = document.getElementById("container-pay");
@@ -126,7 +103,6 @@ function Abona(){
 
     if (btpay.style.display === "none") {
       bthome.style.display = "none";
-      bttoday.style.display = "none";
       btperfil.style.display = "none";
       btnoperation.style.display = "none";
       btpay.style.display = "block";
@@ -136,7 +112,6 @@ function Abona(){
 
 function Retira(){
   const bthome = document.getElementById("container-home");
-  const bttoday = document.getElementById("container-stats");
   const btperfil = document.getElementById("container-perfil");
   const btnoperation = document.getElementById("container-operations");
   const btpay = document.getElementById("container-pay");
@@ -144,7 +119,6 @@ function Retira(){
 
     if (btremove.style.display === "none") {
       bthome.style.display = "none";
-      bttoday.style.display = "none";
       btperfil.style.display = "none";
       btnoperation.style.display = "none";
       btpay.style.display = "none";
@@ -152,21 +126,30 @@ function Retira(){
     }
 }
 
+function HideMessage(){
+  document.getElementById("amount-info-r").innerHTML = "";
+  document.getElementById("amount-info").innerHTML = "";
+}
+
 function AbonaAction(){
   let amountAbonaValue = document.getElementById("abona-amount").value;
   let amountTotalAbonaValue = positionOutside.saldo;
-  amountAbonaValue = parseInt(amountAbonaValue);
+  amountAbonaValue = parseFloat(amountAbonaValue);
   let totalAb;
   
-  if(amountAbonaValue>=10000){
+  if(amountAbonaValue<1){
+    document. getElementById("abona-amount").value = "";
+    document.getElementById("amount-info").innerHTML = "El monto no es valido";
+  }else if(amountAbonaValue>=10000){
     document. getElementById("abona-amount"). value = "";
     document.getElementById("amount-info").innerHTML = "Lo sentimos, no puedes ingresar mas de <br> $10,000.00";
-  }else{
+  }
+  else{
     totalAb = amountTotalAbonaValue + amountAbonaValue;
     positionOutside.saldo = totalAb;
-    document.getElementById("amount-client").innerHTML = totalAb;
-    document.getElementById("amount-client-s").innerHTML = totalAb;
-    document.getElementById("amount-client-remove").innerHTML = totalAb;
+    document.getElementById("amount-client").innerHTML = totalAb.toFixed(2);
+    document.getElementById("amount-client-s").innerHTML = totalAb.toFixed(2);
+    document.getElementById("amount-client-remove").innerHTML = totalAb.toFixed(2);
     document. getElementById("abona-amount"). value = "";
     document.getElementById("amount-info").innerHTML = "Recarga exitosa";
   }
@@ -176,19 +159,47 @@ function AbonaAction(){
 function RetiraAction(){
   let amountRetiraValue = document.getElementById("retira-amount").value;
   let amountTotalRetiraValue = positionOutside.saldo;
-  amountRetiraValue = parseInt(amountRetiraValue);
+  amountRetiraValue = parseFloat(amountRetiraValue);
   let totalRe;
   
-  if(amountRetiraValue>amountTotalRetiraValue||amountRetiraValue<0){
+  if(amountRetiraValue>amountTotalRetiraValue||amountRetiraValue<=0){
     document. getElementById("retira-amount"). value = "";
     document.getElementById("amount-info-r").innerHTML = "Monto insuficiente para retirar";
-  }else{
+  }
+  else{
     totalRe = amountTotalRetiraValue - amountRetiraValue;
     positionOutside.saldo = totalRe;
-    document.getElementById("amount-client").innerHTML = totalRe;
-    document.getElementById("amount-client-s").innerHTML = totalRe;
-    document.getElementById("amount-client-remove").innerHTML = totalRe;
+    document.getElementById("amount-client").innerHTML = totalRe.toFixed(2);
+    document.getElementById("amount-client-s").innerHTML = totalRe.toFixed(2);
+    document.getElementById("amount-client-remove").innerHTML = totalRe.toFixed(2);
     document. getElementById("retira-amount"). value = "";
     document.getElementById("amount-info-r").innerHTML = "Retiro exitoso";
+  }
+}
+
+function DisablePay(){
+  if (document.getElementById("abona-amount").disabled){
+    document.getElementById("abona-amount").disabled =  false;
+    document.getElementById("accept-amount").style.visibility = "visible";
+    document.getElementById("amount-info").style.visibility = "visible";
+    
+  }else{
+    document.getElementById("abona-amount").disabled = true;
+    document.getElementById("accept-amount").style.visibility = "hidden";
+    document.getElementById("amount-info").style.visibility = "hidden";
+  }
+}
+
+
+function DisableRemove(){
+  if (document.getElementById("retira-amount").disabled){
+    document.getElementById("retira-amount").disabled =  false;
+    document.getElementById("accept-amount-r").style.visibility = "visible";
+    document.getElementById("amount-info-r").style.visibility = "visible";
+    
+  }else{
+    document.getElementById("retira-amount").disabled = true;
+    document.getElementById("accept-amount-r").style.visibility = "hidden";
+    document.getElementById("amount-info-r").style.visibility = "hidden";
   }
 }

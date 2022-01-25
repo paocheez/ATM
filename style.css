@@ -104,13 +104,13 @@ header{
     margin-top: 70px;
     line-height: 20px;
     padding: 20px;
+    color: rgba(245, 245, 245, 0.671);
     background: rgba( 215, 0, 160, 0.25 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 4px );
     -webkit-backdrop-filter: blur( 4px );
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
-    color: rgba(245, 245, 245, 0.781);
 }
 
 .test-acc-pin:nth-child(1){
@@ -118,6 +118,18 @@ header{
     font-size: 35px;
 }
 
+.test-acc-user{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin-top: 7px;
+    text-align: center;
+}
+
+.test-acc-user span{
+    border: 1px solid rgba(255, 255, 255, 0.137);
+    padding: 8px;
+
+}
 .welcome-footer span{
     font-size: 25px;
 }
@@ -258,7 +270,7 @@ header{
     margin-left: 20px;
 }
 
-#container-operations, #container-pay, #container-access, #container-stats, #container-perfil{
+#container-operations, #container-pay, #container-access, #container-perfil, #container-remove{
     width:350px;
     height:520px;
 }
@@ -511,6 +523,53 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );*/
     color: whitesmoke;
 }
 
+.container-toggle{
+    margin-top: 3px;
+}
+.switch{
+    position: relative;
+    display: inline-block;
+    width: 68px;
+    height: 35px;
+    margin: 0 10px;
+}
+
+.slider{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color:  #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.switch input{
+    display: none;
+}
+
+.slider:before{
+    position: absolute;
+    content: "";
+    height: 28px;
+    width: 28px;
+    left: 5px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50px;
+}
+
+input:checked + .slider{
+    background-color: #5812cc;
+}
+
+input:checked + .slider:before{
+    transform: translateX(30px);
+}
+
 .balance-place, .balance-income{
     display: flex;
     flex-direction: column;
@@ -523,8 +582,9 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );*/
 }
 
 .balance-place-type{
-    font-size: 22px;  
+    font-size: 25px;  
     font-weight: bolder;  
+    align-self: center;
 }
 
 .balance-place-name{
@@ -566,7 +626,7 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );*/
    cursor: pointer;
  }
 
- #abona-amount{
+ #abona-amount, #retira-amount{
     padding-left: 15px;
     height: 30px;
  }
@@ -575,7 +635,7 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );*/
      position: absolute;
      line-height: 20px;
  }
- #container-extras{
+ .container-extras{
      margin-top: 55px;
  }
 
@@ -617,6 +677,10 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );*/
     -webkit-backdrop-filter: blur( 13.5px );
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
-    padding: 5px 15px;
+    padding: 7px 15px 1px 15px;
     margin-top: 1px;
+ }
+
+ #exit-button{
+     color:burlywood;
  }
